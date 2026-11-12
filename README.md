@@ -8,10 +8,14 @@
 | 2 | 紅蓮の咆哮 (`02_crimson_roar`) | Em / 4/4 / 184 | ペダルリフ、ツインギター、ツーバス | 5.22s – 41.74s |
 | 3 | 深淵の玉座 (`03_throne_of_abyss`) | Cm / 6/8 / 188 | オルガン＋チェンバロ、五度圏進行 | 7.66s – 53.62s |
 | 4 | 終焉のレクイエム (`04_requiem_of_the_end`) | Am→Dm→D / 4/4 / 176 | ラスボス曲。終盤にニ長調の「希望」主題 | 8.18s – 62.73s |
+| 5 | 深き門の番人 (`05_warden_of_the_deep_gate`) | Gm / 4/4 / 162 | スラップベース独奏のイントロ、食い込む主旋律、最後はト長調で解決 | 11.85s – 59.26s |
+| 6 | 緋色の嵐 (`06_scarlet_tempest`) | Bm / 4/4 / 192 | ユニゾンの16分駆け上がり、下降進行のAメロ、ドリアのIV | 5.00s – 50.00s |
+| 7 | 黒き城の主 (`07_lord_of_the_black_keep`) | Fm / 4/4 / 140 | 重い16ビートのリフ、オルガンとブラス | 6.86s – 48.00s |
+| 8 | 最後の夜明け (`08_the_last_dawn`) | F#m→F# / 4/4 / 178 | ラスボス曲。静かなオルガンから入り、サビ終わりで嬰ヘ長調に抜ける | 8.09s – 56.63s |
 
 - `mp3/` … イントロ → ループ2周 → フェードアウトの試聴用音源
 - `midi/` … 同内容のMIDI（GM配列）
-- `src/` … 生成スクリプト。旋律とコードは `src/songs.py` に手書き、伴奏は `src/engine.py` がコードから展開
+- `src/` … 生成スクリプト。旋律とコードは `src/songs.py`（1〜4）と `src/songs2.py`（5〜8）に手書き、伴奏は `src/engine.py` がコードから展開
 
 ## ビルド
 
@@ -20,6 +24,7 @@ pip install mido
 apt-get install -y fluidsynth fluid-soundfont-gm ffmpeg
 python3 src/make.py            # MIDI + MP3
 python3 src/make.py --midi-only
+python3 src/make.py 05 07     # 番号で絞り込み
 ```
 
 ## マインドフルネス用: 静かな水面 (`mp3/still_water.mp3`)

@@ -6,7 +6,8 @@ import os
 import subprocess
 import sys
 
-from songs import SONGS
+from songs import SONGS as S1
+from songs2 import SONGS as S2
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SF2 = os.environ.get('SF2', '/usr/share/sounds/sf2/FluidR3_GM.sf2')
@@ -44,6 +45,9 @@ def build(name, factory):
 
 
 if __name__ == '__main__':
-    for name, factory in SONGS:
+    only = [a for a in sys.argv[1:] if not a.startswith('--')]
+    for name, factory in S1 + S2:
+        if only and not any(name.startswith(o) for o in only):
+            continue
         n, title, bpm, ls, le, total = build(name, factory)
         print('%-24s %-22s bpm=%d loop=%.2fs..%.2fs total=%.1fs' % (n, title, bpm, ls, le, total))

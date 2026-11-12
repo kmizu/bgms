@@ -258,6 +258,8 @@ class Song:
                 for u in hit_units(s, ln):
                     for p in sv:
                         self.note('stab', at + u, 2, p, 110, gate=0.75)
+                        self.note('hit', at + u, 2, p, 112, gate=0.9)
+                    self.note('hit', at + u, 2, root + 12, 112, gate=0.9)
             elif stabs == 'change':
                 for p in sv:
                     self.note('stab', at, 3, p, 100, gate=0.8)
@@ -305,6 +307,9 @@ class Song:
                 'dbeat':  ('x...x...x...x...', '..x...x...x...x.', 4, RIDE),
                 'double': ('xxxxxxxxxxxxxxxx', '....x.......x...', 4, CHINA),
                 'half':   ('x.....x...x.....', '........x.......', 2, RIDE),
+                '16beat': ('x.....x.x..x....', '....x.......x...', 1, CHH),
+                'four':   ('x...x...x...x...', '................', 2, CHH),
+                'hat':    ('................', '................', 2, CHH),
                 '68':     ('x.........x.', '......x.....', 2, CHH),
                 '68drive': ('x...x.....x.', '......x.....', 2, RIDE),
                 '68double': ('x.x.x.x.x.x.', '......x.....', 6, CHINA),
