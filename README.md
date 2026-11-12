@@ -31,3 +31,12 @@ python3 src/make.py --midi-only
 pip install numpy
 python3 src/mindful.py
 ```
+
+### オルゴール版 (`mp3/still_water_orgel.mp3`)
+
+約3分45秒、3/4拍子の子守唄ふう。1小節2.75秒で、4小節のフレーズが11秒の呼吸周期にあたる。
+旋律とコードは手書き、櫛歯の音は加算合成。最後の8小節はゼンマイが切れるように遅くなる。
+
+```bash
+cd src && python3 orgel.py
+```
