@@ -21,3 +21,13 @@ apt-get install -y fluidsynth fluid-soundfont-gm ffmpeg
 python3 src/make.py            # MIDI + MP3
 python3 src/make.py --midi-only
 ```
+
+## マインドフルネス用: 静かな水面 (`mp3/still_water.mp3`)
+
+約6分のアンビエント曲。打楽器なし、ニ長調、サイン波系のパッドと柔らかいベル、呼吸のようなノイズだけで構成。
+全体が11秒周期（5.5秒でふくらみ、5.5秒でしぼむ）でゆっくり揺れ、和音は2周期ごとに変わる。
+
+```bash
+pip install numpy
+python3 src/mindful.py
+```
